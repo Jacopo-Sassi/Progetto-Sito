@@ -75,11 +75,29 @@ body {
     margin-top: -5%;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5rem;
+/* Layout Griglia */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+  gap: 2rem; /* Spazio tra le card */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+
+/* Stile sezione */
+.section {
+  padding: 4rem 0;
+  background: #f8f9fa; /* Colore di sfondo */
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  font-family: 'Ubuntu', sans-serif;
+  color: #000000;
 }
 
 /* Animazione fluttuante */

@@ -8,7 +8,7 @@ function CardHero({
   buttonText = "Scopri di più" 
 }) {
   return (
-    <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
+    <div className='d-flex justify-content-center align-items-center' style={{ height: '40vh' }}>
       <Card className="card-hero-animated card-entrance" style={{ width: '18rem' }}>
         <Card.Img variant="top" src={imageUrl} style={{ 
           height: '200px',
@@ -21,7 +21,9 @@ function CardHero({
           <Button className="pulse-on-hover" variant="primary">{buttonText} </Button>
         </Card.Body>
       </Card>
+      
     </div>
+    
   );
 }
 
