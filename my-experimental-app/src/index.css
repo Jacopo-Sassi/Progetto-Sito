@@ -12,11 +12,12 @@ body {
 
 
 .main {
-    background-color: rgb(237, 219, 219);
     padding: 10rem;
     display: flex;
     justify-content: flex-start;
      font-family: "Ubuntu", sans-serif;
+   background: linear-gradient(135deg, #FFD3A5 0%, #FD6585 50%, #7A5CFF 100%);
+  color: rgb(0, 0, 0);
      margin-bottom: -5%;
 }
 
@@ -55,6 +56,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 30px;
+    margin-left: 5%;
 }
 
 .section {
@@ -78,4 +80,194 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
+}
+
+/* Animazione fluttuante */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Stile della card con animazione */
+.card-hero-animated {
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.card-hero-animated:hover {
+  animation: none; /* Ferma l'animazione al hover */
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.card-entrance {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes stamp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05) rotate(-2deg); }
+  100% { transform: scale(1); }
+}
+
+.card-stamp:hover {
+  animation: stamp 0.4s ease;
+  box-shadow: 0 0 0 5px rgba(255, 215, 0, 0.3);
+}
+
+
+/* === FOOTER === */
+.travel-footer {
+  background: linear-gradient(135deg, #1a2a6c, #4a6bff); /* Gradiente blu */
+  color: white;
+  padding: 3rem 0 1.5rem 0;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  /* Pattern decorativo (opzionale) */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://imgs.search.brave.com/5ZxXYqXZQ0GqBQ6X8Q6X6Q9Z9X6Q9Z9X6Q9Z9X6Q9Z9X6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly90cmFu/c3BhcmVudC5wbmcv/aW1nL2xpZ2h0L3Ry/YW5zcGFyZW50LWxp/Z2h0LXBvaW50cy1n/cmlkLXBhdHRlcm4t/LTQwMHg0MDAucG5n') center/cover;
+    opacity: 0.05;
+  }
+
+  /* Contenitore principale */
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative; /* Sovrascrive il pattern */
+  }
+
+  /* Titoli delle sezioni */
+  .footer-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50%;
+      height: 3px;
+      background: #ff8a00; /* Linea arancione decorativa */
+    }
+  }
+
+  /* Link del footer */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.8rem;
+
+      a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+
+        &:hover {
+          color: white;
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+
+  /* Sezione contatti */
+  .contact-info {
+    p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      i {
+        margin-right: 10px;
+        color: #ff8a00;
+      }
+    }
+  }
+
+  /* Newsletter */
+  .newsletter {
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    button {
+      background: #ff8a00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+
+      &:hover {
+        background: #ff6b00;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  /* Social icons */
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    a {
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #ff8a00;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  /* Copyright */
+  .copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
 }

@@ -1,18 +1,24 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function CardHero() {
+function CardHero({ 
+  imageUrl = "https://via.placeholder.com/300", // Valore di default
+  title = "Titolo Default", 
+  text = "Descrizione default della card",
+  buttonText = "Scopri di più" 
+}) {
   return (
     <div className='d-flex justify-content-center align-items-center' style={{ height: '100vh' }}>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://imgs.search.brave.com/06gMqLWWVqsCi8sdEKJlnSySw2PPW4-FNG2CJoz2wK8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi9kL2RhL1Ro/ZV9QYXJ0aGVub25f/aW5fQXRoZW5zLmpw/Zy81MTJweC1UaGVf/UGFydGhlbm9uX2lu/X0F0aGVucy5qcGc" />
+      <Card className="card-hero-animated card-entrance" style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={imageUrl} style={{ 
+          height: '200px',
+          objectFit: 'cover' ,
+          transition: 'transform 0.3s ease'
+        }}  />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{text}</Card.Text>
+          <Button className="pulse-on-hover" variant="primary">{buttonText} </Button>
         </Card.Body>
       </Card>
     </div>
