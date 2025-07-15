@@ -4,18 +4,18 @@ function Footer() {
       <div className="footer-container">
         {/* Sezione Link Veloci */}
         <div className="footer-section">
-          <h3 className="footer-title">Esplora</h3>
+          <h3 className="footer-title">Discover</h3>
           <ul className="footer-links">
-            <li><a href="#">Destinazioni</a></li>
-            <li><a href="#">Tour Guidati</a></li>
-            <li><a href="#">Crociere</a></li>
-            <li><a href="#">Pacchetti</a></li>
+            <li><a href="#">Destinations</a></li>
+            <li><a href="#">Guided Tours</a></li>
+            <li><a href="#">Cruises</a></li>
+            <li><a href="#">Packages</a></li>
           </ul>
         </div>
 
         {/* Sezione Contatti */}
         <div className="footer-section">
-          <h3 className="footer-title">Contatti</h3>
+          <h3 className="footer-title">Contacts</h3>
           <div className="contact-info">
             <p><i className="fas fa-map-marker-alt"></i> Via Roma 123, Milano</p>
             <p><i className="fas fa-phone"></i> +39 123 456789</p>
@@ -27,7 +27,7 @@ function Footer() {
         <div className="footer-section">
           <h3 className="footer-title">Newsletter</h3>
           <div className="newsletter">
-            <input type="email" placeholder="La tua email" />
+            <input type="email" placeholder="Your email" />
             <button>Iscriviti</button>
           </div>
           <div className="social-icons">
@@ -41,7 +41,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="copyright">
-        <p>&copy; {new Date().getFullYear()} Agency Travel. Tutti i diritti riservati.</p>
+        <p>&copy; {new Date().getFullYear()} Agency Travel. All rights reserved.</p>
       </div>
     </footer>
   );
